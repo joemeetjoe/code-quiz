@@ -1,6 +1,5 @@
 *{
     font-family: 'Roboto', sans-serif;
- 
 }
 
 #questions-header {
@@ -8,6 +7,7 @@
     justify-content: space-between;
     height: 50px;
     width: 100%;
+    font-size: 25px;
     padding: 10px;
 }
 
@@ -33,15 +33,16 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    font-size: larger;
+    margin-top: 50px;
+    font-size: 50px;
     font-weight: 900;
 }
 
 #questions-welcome-statement {
     display: flex;
     justify-content: center;
-    padding: 1rem;
-    font-size: smaller;
+    padding: 1rem 5rem 1rem 5rem;
+    font-size: 25px;
     font-weight: 600;
 }
 
@@ -49,9 +50,9 @@
     background-color: darkblue;
     color: white;
     border-radius: 5px;
-    padding: 5px 10px 5px 10px;
+    padding: 10px 20px 10px 20px;
     border-style: none;
-    font-size: smaller;
+    font-size: 20px;
 }
 
 

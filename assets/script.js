@@ -1,64 +1,71 @@
 const startQuizButton = document.getElementById("start-quiz-button");
+const questionsAndWelcome = document.getElementById("questions-and-welcome");
+const questionsButtonsChoice = document.getElementById("questions-buttons-choice");
 
-const questionOne = {
-    question: "Commonly used data types DO NOT include",
-    answerOne: "strings",
-    answerTwo: "booleans",
-    answerThree: "alerts",
-    answerFour: "numbers"
-};
+var questions = [
+{
+    question: "Commonly used data types DO NOT include:",
+    answerOne: "1. strings",
+    answerTwo: "2. booleans",
+    answerThree: "3. alerts",
+    answerFour: "4. numbers"
+},
 
-const questionTwo = {
+{
     question: "Arrays in JavaScript can be used to store _________.",
-    answerOne: "numbers and strings",
-    answerTwo: "other arrays",
-    answerThree: "booleans",
-    answerFour: "all of the above"
-};
+    answerOne: " 1. numbers and strings",
+    answerTwo: " 2. other arrays",
+    answerThree: "3. booleans",
+    answerFour: "4. all of the above"
+},
 
-const questionThree = {
-    question: "Commonly used data types do not include",
-    answerOne: "strings",
-    answerTwo: "booleans",
-    answerThree: "alerts",
-    answerFour: "numbers"
-};
-
-const questionFour = {
+{
     question: "String values must be enclosed within ______ when being assigned to variables.",
-    answerOne: "commas",
-    answerTwo: "curly brackets",
-    answerThree: "quotes",
-    answerFour: "parenthesis"
-};
+    answerOne: "1. commas",
+    answerTwo: "2. curly brackets",
+    answerThree: "3. quotes",
+    answerFour: "4. parenthesis"
+},
 
-const questionFive = {
-    question: "A very useful tool used during development and debugging for printint content to the debugger is:",
-    answerOne: "JavaScript",
-    answerTwo: "terminal/bash",
-    answerThree: "for loops",
-    answerFour: "console.log"
-};
+{
+    question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+    answerOne: "1. JavaScript",
+    answerTwo: "2. terminal/bash",
+    answerThree: "3. for loops",
+    answerFour: "4. console.log"
+},
 
-const questionSix = {
+{
     question: "The condition in an if/else statement is enclosed with _______.",
-    answerOne: "quotes",
-    answerTwo: "curly brackets",
-    answerThree: "parenthesis",
-    answerFour: "square brackets"
-};
-
-const questionArray = [questionOne, questionTwo, questionThree, questionFour];
-
-
-
+    answerOne: "1. quotes",
+    answerTwo: "2. curly brackets",
+    answerThree: "3. parenthesis",
+    answerFour: "4. square brackets"
+}
+];
 
 function quizGame () {
-    for (var i=0; i < questionArray; i ++){
-        for 
+    nextQuestion = 0;
+    // questionsButtonsChoice.
+
+
+
+    for(var i = 0; i < questions.length; i++) {
+        for(var prop in questions[i]){
+            console.log(questions[i][prop]);
+            questionsAndWelcome.innerHTML = questions[i].question;
+            questionsButtonsChoice.createElement
+            
+
+            nextQuestion += 1;
+            if (nextQuestion === 5) {
+                return;
+            }
+
+        }
     }
 }
-
+   
 startQuizButton.addEventListener("click", quizGame);
 
 
