@@ -1,3 +1,4 @@
+/* targets the entire page and makes all fonts roboto with a backup of sans-serif */
 *{
     font-family: 'Roboto', sans-serif;
 }
@@ -15,13 +16,13 @@
     text-decoration: none;
 }
 
-#questions-body{
+#questions-body, #highscores-body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-#questions-main{
+#questions-main {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -29,7 +30,7 @@
     height: fit-content;
 }
 
-#questions-and-welcome {
+#questions-and-welcome, #highscores-welcome {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -38,7 +39,7 @@
     font-weight: 900;
 }
 
-#questions-welcome-statement {
+#questions-welcome-statement{
     display: flex;
     justify-content: center;
     padding: 1rem 5rem 1rem 5rem;
@@ -55,7 +56,7 @@ button {
     font-size: 20px;
     margin-top: 10px;
 }
-
+/* this only shows up in the javascript written html, styles the question for each round */
 #question{
     display: flex;
     justify-content: center;
@@ -63,7 +64,7 @@ button {
     font-size: 25px;
     font-weight: 600;
 }
-
+/* this only shows up in the javascript written html, styles the "wrong" answer response. */
 #answer-response{
     display: flex;
     justify-content: flex-start;
@@ -76,7 +77,76 @@ button {
     color: lightslategray;
     font-style: italic;
 }
+/* this section is to style the Highscores seperate page */
+#highscores-main {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 50%;
+    height: fit-content;
+    margin-top: 75px;
+}
 
+#highscores-welcome{
+    justify-content: flex-start;
+    margin-bottom: 15px;
+    font-size: 35px;
+}
+
+#highscore-results{
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+#highscore-results li{
+    background-color: thistle;
+    margin-top: 5px;
+    width: 100%;
+    border-radius: 2px;
+    font-size: 20px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+#results-section{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 45px;
+}
+
+#results-welcome{
+    font-size: 35px;
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+
+#results-final-score{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#results-form label {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#results-form input {
+    border-radius: 3px;
+    font-size: 25px;
+    margin-left: 5px;
+}
+
+#input-button{
+    background-color: darkblue;
+    color: white;
+    border-radius: 5px;
+    padding: 6px 20px 6px 20px;
+    border-style: none;
+    font-size: 15px;
+    margin-left: 5px;
+}
 
 
 

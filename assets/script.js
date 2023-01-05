@@ -1,5 +1,7 @@
 const startQuizButton = document.getElementById("start-quiz-button");
-var questionList = {
+const mainElement = document.getElementById("questions-main");
+
+const questionList = {
     question1: `<section id="questions-buttons-choice">
                     <ul>
                         <li id = "question"> Commonly used data types DO NOT include: </li>
@@ -50,13 +52,13 @@ var questionList = {
                     </ul>
                 </section>
                 <section id = "answer-response">Wrong!</section>`,
-    highscore: `<section id="questions-buttons-choice">
-                    <h1 id="questions-and-welcome">All done!</h1>
-                    <p id="questions-welcome-statement">Your final score is blank </p>
-                    <form action="/action_page.php">
+    highscore: `<section id="results-section">
+                    <h1 id="results-welcome">All done!</h1>
+                    <p id="results-final-score">Your final score is  </p>
+                    <form id="results-form">
                         <label for="initials">Enter initials:</label>
-                        <input type="text" id="fname" name="fname">
-                        <input type="submit" value="Submit">
+                        <input type="text" id="initials-submit-box" name="fname">
+                        <button id="input-button">Submit</button>
                     </form>
                 </section>`,
 }
@@ -66,20 +68,27 @@ var questionList = {
 let timeEl= document.getElementById("timer");
 var secondsLeft = 100;
 
-// setting up the timer to count down. 
+// setting up the timer to count down. if the timer reaches zero, then push the user to the high score screen.
 function setTime() {
-var timerInterval = setInterval(function() {
-    secondsLeft--;
-    timeEl.textContent = "Time: " + secondsLeft;
-}, 1000);
+    var timerInterval = setInterval(function() {
+        secondsLeft--;
+        timeEl.textContent = "Time: " + secondsLeft;
+// call back function to change the main element to the high score screen if the timer reaches zero.
+    if(secondsLeft <= 0) {
+        // Stops execution of action at set interval
+        secondsLeft = 0;
+        timeEl.textContent = "Time: " + secondsLeft;
+        clearInterval(timerInterval);
+        mainElement.innerHTML = questionList.highscore;
+        highScoreAdd();
+    }
+    }, 1000);
 }
 
 
 
 // seting up the function to start the game!
 function quizGame(){
-    // gets the main element and saves it to a variable so i can overwrite the contents
-    var mainElement = document.getElementById("questions-main");
     // setting newQuestion to the array position of question 1
     var newQuestion = questionList.question1;   
     // setting the innerHTML of the main section "questions main to equal the question 1 of the object."
@@ -92,7 +101,6 @@ function quizGame(){
     setTime();
 
     // adding an on click event and running it through some if statements to loop through the object under certain conditions. 
-    
     mainElement.addEventListener("click", function(event){
         var element = event.target;
         var state = element.getAttribute("data-answer");
@@ -100,6 +108,7 @@ function quizGame(){
         
         if (state === "wrong"){
             document.getElementById("answer-response").style.display= "block";
+            secondsLeft -= 10;
         } else if (newQuestion === questionList.question1 && state === "right") {
             newQuestion = questionList.question2;
             mainElement.innerHTML = newQuestion;
@@ -119,12 +128,28 @@ function quizGame(){
         } else if (newQuestion === questionList.question5 && state === "right") {
             newQuestion = questionList.highscore;
             mainElement.innerHTML = newQuestion;
+            highScoreAdd();
         };
-    
     });
 }
 
+function highScoreAdd() {
+    var highScoreInputButton = document.getElementById("input-button");
+
+    highScoreInputButton.addEventListener("click", function(event){
+        event.preventDefault();
+        var initialsForHighScore = document.getElementById("initials-submit-box").value;
+        
+        if (initialsForHighScore.length <= 3){
+            localStorage.setItem(initialsForHighScore, secondsLeft);
+        } 
+});
+}
+// calling the quizGame function on clicking the start quiz button
 startQuizButton.addEventListener("click", quizGame);
+
+
+
 
 
 
