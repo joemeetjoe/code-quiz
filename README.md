@@ -16,7 +16,7 @@ N/A
 
 If you would like to use this project, please click on the link below: 
 
-https://joemeetjoe.github.io/code-quiz/highscore.html
+https://joemeetjoe.github.io/code-quiz/
 
 ![Screenshot Capture - 2023-01-05 - 21-49-03](https://user-images.githubusercontent.com/119348225/210920109-32929f33-b8fb-4e01-b399-2bad8d1f567b.png)
 ![Screenshot Capture - 2023-01-05 - 21-49-32](https://user-images.githubusercontent.com/119348225/210920116-8aaaa328-1da6-4f90-aee0-69de5fbb009e.png)
