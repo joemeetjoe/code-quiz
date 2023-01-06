@@ -1,3 +1,4 @@
+<!--header setting telling the browser the doctype, the charset, device width, and linking the font styles, css sheets, and js files. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,13 +10,15 @@
     <title> Coding Quiz!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com"link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
+<!-- body sections for the questions page -->
 <body id="questions-body">
-
+    <!-- header sections that contains the timer and the link to high scores -->
     <header id="questions-header">
         <a class = "header-top-banner" id="highscore-box" href="./highscore.html"> View Highscores</a>
         <div class = "header-top-banner" id="timer"> Time: 100</div>
     </header>
-    
+    <!-- main section that contains the greeting, description of what to do, and the start buttons. -->
+    <!-- everything in the main section will be overwritten by the javascript as questions go on -->
     <main id="questions-main">
         <h1 id="questions-and-welcome">Coding Quiz Challenge</h1>
         <p id="questions-welcome-statement">Try and answer the following code related questions within the time limit. Please keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
@@ -24,7 +27,7 @@
         </section>
     </main>
 </body>
-
+<!-- script tag linking the javascript file -->
 <script src = "./assets/script.js"></script>
  
 </html>

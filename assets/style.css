@@ -2,7 +2,7 @@
 *{
     font-family: 'Roboto', sans-serif;
 }
-
+/* targetting the questions header, setting display flex, spacing the content to opposite sides of the box, along with properties for height, width, font size, etc. */
 #questions-header {
     display: flex;
     justify-content: space-between;
@@ -11,17 +11,17 @@
     font-size: 25px;
     padding: 10px;
 }
-
+/* making the highscore text not look like a hyperlink */
 #highscore-box{
     text-decoration: none;
 }
-
+/* targetting the questions and highscores body and making them flex, wrap, and justifying the content */
 #questions-body, #highscores-body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-
+/* targetting the main section of questions making the display flex, centering the items, making them into columns and setting the width and height */
 #questions-main {
     display: flex;
     align-items: center;
@@ -29,7 +29,7 @@
     width: 75%;
     height: fit-content;
 }
-
+/* targetting the questions and highscores welcome, setting flex properties, width, margin, and font size */
 #questions-and-welcome, #highscores-welcome {
     display: flex;
     justify-content: center;
@@ -38,7 +38,7 @@
     font-size: 50px;
     font-weight: 900;
 }
-
+/* targetting questions welcome statement, setting flex properties, adding padding and font-size */
 #questions-welcome-statement{
     display: flex;
     justify-content: center;
@@ -46,7 +46,7 @@
     font-size: 25px;
     font-weight: 600;
 }
-
+/* setting the properties of all buttons in the document. making the text white and chaning the padding, margin, etc.  */
 button {
     background-color: darkblue;
     color: white;
@@ -86,18 +86,18 @@ button {
     height: fit-content;
     margin-top: 75px;
 }
-
+/* overriding some features for the highscores welcome */
 #highscores-welcome{
     justify-content: flex-start;
     margin-bottom: 15px;
     font-size: 35px;
 }
-
+/* overriding some features for the highscores welcome */
 #highscore-results{
     width: 100%;
     margin-bottom: 5px;
 }
-
+/* targetting the highscore results lists, setting the backround color, margin, width, etc */
 #highscore-results li{
     background-color: thistle;
     margin-top: 5px;
@@ -107,37 +107,37 @@ button {
     padding: 5px;
     font-weight: bold;
 }
-
+/* targetting the results section, setting flex properties and height */
 #results-section{
     display: flex;
     flex-direction: column;
     height: 100%;
     margin-top: 45px;
 }
-
+/* targetting the results welcome section, setting the font size, margin, etc.  */
 #results-welcome{
     font-size: 35px;
     margin-bottom: 20px;
     font-weight: 900;
 }
-
+/* targetting the results final score, setting font stylings */
 #results-final-score{
     font-size: 25px;
     font-weight: 600;
     margin-bottom: 20px;
 }
-
+/* targetting results form label and making the styling bold */
 #results-form label {
     font-weight: bold;
     font-size: 25px;
 }
-
+/* targetting the results form input and setting border radius, font size, margin */
 #results-form input {
     border-radius: 3px;
     font-size: 25px;
     margin-left: 5px;
 }
-
+/* styiling the input button of the submission form for the initials */
 #input-button{
     background-color: darkblue;
     color: white;

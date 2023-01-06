@@ -1,6 +1,7 @@
+// setting global variables for the start quiz button and the main section of the page
 const startQuizButton = document.getElementById("start-quiz-button");
 const mainElement = document.getElementById("questions-main");
-
+// creating an object with object literals inside of it to just wholesale replace the html in the main section later
 const questionList = {
     question1: `<section id="questions-buttons-choice">
                     <ul>
@@ -82,10 +83,12 @@ function setTime() {
         mainElement.innerHTML = questionList.highscore;
         highScoreAdd();
     }
+    // if statement that will stop the timer if the user reaches the highscore entry page
+    if (mainElement.innerHTML === questionList.highscore){
+        clearInterval(timerInterval);
+    }
     }, 1000);
 }
-
-
 
 // seting up the function to start the game!
 function quizGame(){
@@ -102,10 +105,13 @@ function quizGame(){
 
     // adding an on click event and running it through some if statements to loop through the object under certain conditions. 
     mainElement.addEventListener("click", function(event){
+        // variable that looks for what the user is clicking, and variable that gets the data type of the button clicked on.
         var element = event.target;
         var state = element.getAttribute("data-answer");
         
-        
+        // if statements that check what question the user is on and whether or not the answer is wrong. if it is wrong, tick the timer down by 10
+        // if the user is right, move on to the next appropriate question. Lastly, move to the high score entry page and execute the function that will
+        // listen for what the user puts in initials and their score. 
         if (state === "wrong"){
             document.getElementById("answer-response").style.display= "block";
             secondsLeft -= 10;
@@ -132,10 +138,10 @@ function quizGame(){
         };
     });
 }
-
+// function that will store the users initials and their score. 
 function highScoreAdd() {
     var highScoreInputButton = document.getElementById("input-button");
-
+    
     highScoreInputButton.addEventListener("click", function(event){
         event.preventDefault();
         var initialsForHighScore = document.getElementById("initials-submit-box").value;
@@ -147,10 +153,3 @@ function highScoreAdd() {
 }
 // calling the quizGame function on clicking the start quiz button
 startQuizButton.addEventListener("click", quizGame);
-
-
-
-
-
-
-
